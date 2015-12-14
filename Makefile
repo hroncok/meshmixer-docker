@@ -1,6 +1,6 @@
 ver = 2.9
 
-all: docker
+build: docker
 
 original_meshmixer_$(ver)_amd64.deb:
 	wget https://s3.amazonaws.com/autodesk-meshmixer/meshmixer/amd64/meshmixer_$(ver)_amd64.deb -O $@
@@ -23,4 +23,7 @@ clean:
 	rm *.deb 2> /dev/null || :
 	rm -rf deb 2> /dev/null || :
 
-.PHONY: clean docker all
+run:
+	docker run -ti --rm -e DISPLAY=$$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $$HOME:/home/developer meshmixer
+
+.PHONY: clean docker build run
