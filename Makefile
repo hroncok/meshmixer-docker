@@ -12,7 +12,7 @@ meshmixer_$(ver)_amd64.deb: original_meshmixer_$(ver)_amd64.deb
 	dpkg -e $< deb/DEBIAN/
 	dpkg -x $< deb/
 	head deb/DEBIAN/postinst -n`grep ldconfig deb/DEBIAN/postinst -n | tail -n 1 | cut -d: -f1` > deb/DEBIAN/postinstnew
-	mv deb/DEBIAN/postinst{new,}
+	mv deb/DEBIAN/postinstnew deb/DEBIAN/postinst
 	chmod +x deb/DEBIAN/postinst
 	dpkg -b deb $@
 
