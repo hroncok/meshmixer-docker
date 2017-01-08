@@ -41,6 +41,6 @@ Note that if your user UID and/or GID is different than 1000, you'll have to edi
 When running, your home directory is mounted inside the container for your convenience. However, this might be dangerous.
 
 Feel free to report any issue related to what this little project does on GitHub.
-Please, report any issues with MeshMixer itself on [their forum](http://meshmixer.com/forum/index.php?board=8.0).
+Please, report any issues with MeshMixer itself on [their forum](http://meshmixerforum.com/index.php?board=8.0).
 
 ![MeshMixer running on Fedora](screenshot.png)
