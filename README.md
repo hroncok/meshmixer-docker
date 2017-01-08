@@ -1,6 +1,29 @@
 MeshMixer in Docker
 ===================
 
+**This repository probably broken**, it was an experiment. Use AppImage instead:
+
+```bash
+# Get Ubuntu up and running, maybe use vagrant:
+vagrant init ubuntu/trusty64
+vagrant up
+vagrant ssh
+
+# On Ubuntu, create an AppImage of MeshMixer
+apt-get update
+apt-get install git wget dpkg-dev libfuse2 fuse
+git clone https://github.com/probonopd/AppImages.git
+cd AppImages/
+chmod +x recipes/meta/Recipe
+recipes/meta/Recipe recipes/meta/MeshMixer.yml
+
+# Get the AppImage from the vagrant box to host's PWD:
+mv out/MeshMixer*AppImage /vagrant/
+```
+
+About this repo
+---------------
+
 This is a simple repo with a Makefile that will create and run MeshMixer in Docker.
 
 To build the docker image, simply run `make`, to run MeshMixer, run `make run`.
