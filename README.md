@@ -3,6 +3,9 @@ MeshMixer in Docker
 
 **This repository probably broken**, it was an experiment. Use AppImage instead:
 
+How to create MeshMixer AppImage
+--------------------------------
+
 ```bash
 # Get Ubuntu up and running, maybe use vagrant:
 vagrant init ubuntu/trusty64
@@ -20,6 +23,8 @@ recipes/meta/Recipe recipes/meta/MeshMixer.yml
 # Get the AppImage from the vagrant box to host's PWD:
 mv out/MeshMixer*AppImage /vagrant/
 ```
+
+The resulting file can be just executed. Tested on Fedora 25 and it works fine.
 
 About this repo
 ---------------
