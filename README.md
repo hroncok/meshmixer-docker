@@ -7,18 +7,19 @@ How to create MeshMixer AppImage
 --------------------------------
 
 ```bash
-# Get Ubuntu up and running, maybe use vagrant:
-vagrant init ubuntu/trusty64
+# Get a recent or old Ubuntu up and running, maybe use vagrant:
+vagrant init ubuntu/xenial64
 vagrant up
 vagrant ssh
 
 # On Ubuntu, create an AppImage of MeshMixer
-apt-get update
-apt-get install git wget dpkg-dev libfuse2 fuse
+sudo apt-get update
+sudo apt-get install git wget dpkg-dev libfuse2 fuse desktop-file-utils
 git clone https://github.com/probonopd/AppImages.git
 cd AppImages/
 chmod +x recipes/meta/Recipe
 recipes/meta/Recipe recipes/meta/MeshMixer.yml
+# or: recipes/meta/Recipe --no-di recipes/meta/MeshMixer.yml
 
 # Get the AppImage from the vagrant box to host's PWD:
 mv out/MeshMixer*AppImage /vagrant/
